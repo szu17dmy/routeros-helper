@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e089161-efc8-4826-97d9-af39777e5167" name="Changes" comment="" />
+    <list default="true" id="3e089161-efc8-4826-97d9-af39777e5167" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/ip/firewall/addrlists/addrlists.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/ip/firewall/addrlists/addr.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/ip/firewall/addrlists/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/ip/firewall/addrlists/main.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +57,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/ip/firewall/addrlists" />
+      <recent name="$PROJECT_DIR$/cmd" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="routeros-address-lists-helper" />
@@ -59,6 +70,18 @@
       <kind />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build szu17dmy/routeros-helper/cmd/ip/firewall/addrlists" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="routeros-helper" />
+      <working_directory value="$PROJECT_DIR$" />
+      <envs>
+        <env name="ADDRESS_LIST_URL" value="https://github.com/17mon/china_ip_list/raw/master/china_ip_list.txt" />
+      </envs>
+      <kind value="PACKAGE" />
+      <package value="szu17dmy/routeros-helper/cmd/ip/firewall/addrlists" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/ip/firewall/addrlists/main.go" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -83,6 +106,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build szu17dmy/routeros-helper/cmd/ip/firewall/addrlists" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,7 +122,7 @@
       <updated>1700709677175</updated>
       <workItem from="1700709678150" duration="304000" />
       <workItem from="1700710023666" duration="24000" />
-      <workItem from="1700710055611" duration="1082000" />
+      <workItem from="1700710055611" duration="7302000" />
     </task>
     <servers />
   </component>
@@ -103,5 +131,16 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/ip/firewall/addrlists/main.go</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

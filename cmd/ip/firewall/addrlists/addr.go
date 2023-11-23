@@ -1,5 +1,0 @@
-package addrlists
-
-func load() {
-
-}
