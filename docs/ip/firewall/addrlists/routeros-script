@@ -1,0 +1,42 @@
+# Based on https://wiki.mikrotik.com/wiki/Using_Fetch_and_Scripting_to_add_IP_Address_Lists
+
+:delay 10s ;
+:log info "load-address-list started" ;
+
+:global lists [] ;
+:global page 0 ;
+:global size 100 ;
+:global fuse 100 ;
+
+:do {
+    :delay 100ms ;
+    :set lists [ /tool/fetch mode=https output=user url="https://<api-server>/address-lists?page=$page&size=$size" as-value ] ;
+    :local data ( $lists->"data") ;
+    :local contentLen [ :len $data ] ;
+    :local lineEnd 0 ;
+    :local line "" ;
+    :local lastEnd 0;
+    :do {
+        :set lineEnd [ :find $data "\n" $lastEnd ] ;
+        :if ( [ :len $lineEnd ] != 0 ) do={
+            :set line [ :pick $data $lastEnd $lineEnd ] ;
+            :set lastEnd ( $lineEnd + 1 ) ;
+            :delay 1ms ;
+            :if ( [ :len $line ] > 1 ) do={
+                :local id [ /ip/firewall/address-list/find list=list-name address=$line ] ;
+                :if ( [ :len $id ] = 0 ) do={
+                    /ip/firewall/address-list/add list=list-name dynamic=yes timeout=3d address=$line ;
+                } else={
+                    /ip/firewall/address-list/set number=$id timeout=3d ;
+                } ;
+            } ;
+        } else={
+            :set lineEnd $contentLen ;
+        } ;
+    } while ( $lineEnd < $contentLen ) ;
+
+    :set page ( $page + 1 ) ;
+    :set fuse ( $fuse - 1 ) ;
+} while ( [:len ( $lists->"data") ] > 1 && $fuse > 0 ) ;
+
+:log info "load-address-list end, total pages: $page" ;
